@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 60 20% 99%;
+    --foreground: 160 10% 10%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 160 10% 10%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 10% 10%;
+
+    /* Primary - Soft Sage Green */
+    --primary: 152 35% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Warm Light */
+    --secondary: 45 30% 96%;
+    --secondary-foreground: 160 10% 20%;
+
+    /* Muted */
+    --muted: 60 10% 95%;
+    --muted-foreground: 160 5% 45%;
+
+    /* Accent - Soft Gold */
+    --accent: 42 70% 55%;
+    --accent-foreground: 160 10% 10%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 60 10% 90%;
+    --input: 60 10% 90%;
+    --ring: 152 35% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --success: 152 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 200 80% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* AI Accent - Subtle purple-blue for AI features */
+    --ai: 230 70% 60%;
+    --ai-foreground: 0 0% 100%;
+    --ai-soft: 230 60% 96%;
+
+    /* Sidebar */
+    --sidebar-background: 160 15% 98%;
+    --sidebar-foreground: 160 10% 20%;
+    --sidebar-primary: 152 35% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 20% 94%;
+    --sidebar-accent-foreground: 160 10% 20%;
+    --sidebar-border: 60 10% 90%;
+    --sidebar-ring: 152 35% 45%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 35% 45%), hsl(152 45% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(152 30% 97%), hsl(45 30% 96%));
+    --gradient-ai: linear-gradient(135deg, hsl(230 70% 60%), hsl(260 70% 65%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(60 10% 99%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(160 10% 10% / 0.03);
+    --shadow-md: 0 4px 6px -1px hsl(160 10% 10% / 0.05), 0 2px 4px -2px hsl(160 10% 10% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(160 10% 10% / 0.08), 0 4px 6px -4px hsl(160 10% 10% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(160 10% 10% / 0.1), 0 8px 10px -6px hsl(160 10% 10% / 0.05);
+    --shadow-card: 0 2px 8px -2px hsl(160 10% 10% / 0.08);
+    --shadow-card-hover: 0 8px 20px -4px hsl(160 10% 10% / 0.12);
+  }
+
+  .dark {
+    --background: 160 15% 8%;
+    --foreground: 60 10% 95%;
+
+    --card: 160 12% 12%;
+    --card-foreground: 60 10% 95%;
+
+    --popover: 160 12% 12%;
+    --popover-foreground: 60 10% 95%;
+
+    --primary: 152 40% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 10% 18%;
+    --secondary-foreground: 60 10% 90%;
+
+    --muted: 160 10% 20%;
+    --muted-foreground: 60 5% 55%;
+
+    --accent: 42 65% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 10% 20%;
+    --input: 160 10% 20%;
+    --ring: 152 40% 50%;
+
+    --ai: 230 65% 55%;
+    --ai-foreground: 0 0% 100%;
+    --ai-soft: 230 40% 15%;
+
+    --sidebar-background: 160 12% 10%;
+    --sidebar-foreground: 60 10% 90%;
+    --sidebar-primary: 152 40% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 10% 18%;
+    --sidebar-accent-foreground: 60 10% 90%;
+    --sidebar-border: 160 10% 20%;
+    --sidebar-ring: 152 40% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-ai {
+    background: var(--gradient-ai);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .ai-glow {
+    box-shadow: 0 0 20px hsl(var(--ai) / 0.3);
+  }
+}
